@@ -7,6 +7,10 @@
   font-family: "Karla", sans-serif;
 }
 
+body {
+  overflow-y: scroll;
+}
+
 h1,
 h2,
 h3,
