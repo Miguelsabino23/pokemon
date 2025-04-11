@@ -1,21 +1,46 @@
-import { Link, NavLink } from "react-router";
-import logo from "../../assets/svg/logo.svg";
+import { NavLink } from "react-router";
+import LogoPokemon from "./logoPokemon";
 
 export function Header() {
   return (
-    <header className='w-full flex items-center justify-around'>
-      <img src={logo} alt='logo-pokemon' />
-      <nav className='flex justify-around w-1/3 '>
-        <NavLink to='/' className='no-underline text-black'>
-          Home
+    <header className='w-full items-center bg-third border-b-0 drop-shadow-md'>
+      <div className='flex items-center py-4 px-40 justify-between w-full'>
+        <NavLink to='/'>
+          <LogoPokemon />
         </NavLink>
-        <Link to='pokedex' className='no-underline text-black'>
-          Pokédex
-        </Link>
-        <Link to='legendaries' className='no-underline'>
-          Legendaries
-        </Link>
-      </nav>
+        <nav className='flex justify-between w-1/3 '>
+          <NavLink
+            to='/'
+            className={({ isActive }) =>
+              `no-underline text-dark border-b-2 text-2xl  transition-all ${
+                isActive ? "border-dark" : "border-transparent"
+              }`
+            }
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to='pokedex'
+            className={({ isActive }) =>
+              `no-underline text-dark border-b-2 text-2xl  transition-all ${
+                isActive ? "border-dark" : "border-transparent"
+              }`
+            }
+          >
+            Pokédex
+          </NavLink>
+          <NavLink
+            to='legendaries'
+            className={({ isActive }) =>
+              `no-underline text-dark border-b-2 text-2xl  transition-all ${
+                isActive ? "border-dark" : "border-transparent"
+              }`
+            }
+          >
+            Legendaries
+          </NavLink>
+        </nav>
+      </div>
     </header>
   );
 }
